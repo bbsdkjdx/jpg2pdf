@@ -92,7 +92,7 @@ void insertJPEGFile(const char *fileName, int fileSize, PJPEG2PDF pdfId, PageOri
 		fprintf(stderr,"Warning: File %s should be %d Bytes. But only read in %d Bytes.\n", fileName, fileSize, readInSize);
 
 	if(1 == get_jpeg_size(jpegBuf, readInSize, &jpegImgW, &jpegImgH, &colors, &dpiX, &dpiY)) {
-		printf("Adding %s (%dx%d, %.0fx%.0f dpi)\n", fileName, jpegImgW, jpegImgH, dpiX, dpiY);
+		//printf("Adding %s (%dx%d, %.0fx%.0f dpi)\n", fileName, jpegImgW, jpegImgH, dpiX, dpiY);
 		/* Add JPEG File into PDF */
 		Jpeg2PDF_AddJpeg(pdfId, jpegImgW, jpegImgH, readInSize, jpegBuf, (3==colors), pageOrientation, dpiX, dpiY, scale, cropHeight, cropWidth);
 	} else {
@@ -231,7 +231,3 @@ DLLEXP char *_main(char *outputFilename)
 	return "ok";
 }
 
-//int main(int argc, char *argv[]) 
-//{
-//	printf(_main("all.pdf"));
-//}

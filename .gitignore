@@ -6,3 +6,5 @@ Release*/
 *.opensdf
 *.sdf
 *.suo
+*.pyc
+*.pdf
